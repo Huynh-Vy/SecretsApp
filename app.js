@@ -224,22 +224,10 @@ app.post("/login", function(req, res) {
 });
 
 
-
-
-
-
-
-
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 3000;
-}
-
-
-app.listen(port, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("Server ready to start at port 3000");
 })
 
-server.listen(port, function() {
+server.listen(process.env.PORT || 3001, function() {
   console.log("Listen on port 3001");
 })
