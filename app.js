@@ -29,7 +29,7 @@ app.use(express.static("public"));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use(session({ //set up session, lưu ý phải để code sau app.use và trước mongoose.connect
+app.use(session({
   secret: "Our Little secret.",
   resave: false,
   saveUninitialized: false
@@ -228,6 +228,6 @@ app.listen(process.env.PORT || 3000, function() {
   console.log("Server ready to start at port 3000");
 })
 
-// server.listen(process.env.PORT || 3001, function() {
-//   console.log("Listen on port 3001");
-// })
+server.listen(process.env.PORT || 3001, function() {
+  console.log("Listen on port 3001");
+})
