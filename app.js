@@ -39,7 +39,7 @@ app.use(session({ //set up session, lưu ý phải để code sau app.use và tr
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/userDB");
+mongoose.connect("mongodb+srv://admin-vyhuynh:Test123@cluster0.vwjgb.mongodb.net/userDB");
 
 const userSchema = new mongoose.Schema ({
   email: String,
@@ -233,10 +233,10 @@ app.post("/login", function(req, res) {
 
 
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("Server ready to start at port 3000");
 })
 
-server.listen(3001, function() {
+server.listen(process.env.PORT || 3001, function() {
   console.log("Listen on port 3001");
 })
